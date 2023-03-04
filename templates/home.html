@@ -4,16 +4,25 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>RUNNING FLASK ON GCE</title>
+        <title>GCP Chat Bot</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-        <div class="container">
-            <div class="jumbotron text-center">
-                <h2>FLASK APPLICATION RUNNING ON GCE</h4>
-                <p>Conventionally, Flask looks for view files in a folder with specific name. For the same reason we need to create a folder with the `templates` name and add our view files. In the `templates` folder, create a new file and name it `home.html`. This file contains the code snippets rendered on the homepage of our application.
-                </p>
-            </div>
+        <div>
+            <h2>User Information:</h2>
+            <form>
+                <label for="fname">First name:</label>
+                <input type="text" id="fname" name="fname" value="{{request.form.fname}}" required><br><br>
+                <label for="lname">Last name:</label>
+                <input type="text" id="lname" name="lname" value="{{request.form.lname}}" required><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="{{request.form.email}}" required><br><br>
+                <input class="btn btn-default" type="submit" value="Start">
+            </form>
+            {% if error %}
+            <p class="error"><strong>Error:</strong> {{ error }}
+            {% endif %}
         </div>
+        
     </body>
 </html>
