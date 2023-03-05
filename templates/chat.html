@@ -7,12 +7,23 @@
   </head>
   <body>
     <div>
-      <form action="" method="post">
-        <label style="width: 100%"><b>First Name:</b> {{firstName}}</label>
-        <label style="width: 100%"><b>Last Name:</b> {{lastName}}</label>
-        <label style="width: 100%"><b>Email:</b> {{email}}</label>
-	    <input class="btn btn-default" type="submit" value="Home">
-      <form>
+        <form action="" method="post">
+            <label style="width: 100%"><b>First Name:</b> {{firstName}}</label>
+            <br>
+            <label style="width: 100%"><b>Last Name:</b> {{lastName}}</label>
+            <br>
+            <label style="width: 100%"><b>Email:</b> {{email}}</label>
+            <br>
+            <input class="btn btn-default" type="submit" name="q" value="Does UC have a football team?"><br>
+            <input class="btn btn-default" type="submit" name="q" value="Does UC have Computer Science Major?"><br>
+            <input class="btn btn-default" type="submit" name="q" value="Does UC have on campus housing?"><br>
+            <input class="btn btn-default" type="submit" name="q" value="Do the dining halls have good food?">
+            <br>
+            <h2>Answer:</h2>
+            <label>{{answer}}</label>
+            <br>
+            <input class="btn btn-default" type="submit" name="q" value="End">
+        </form>
     </div>
   </body>
 </html>
